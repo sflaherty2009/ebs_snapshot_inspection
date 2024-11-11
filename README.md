@@ -1,8 +1,3 @@
-
-Here is a sample README file for the provided Lambda function script:
-
----
-
 # EBS Snapshot Cleanup Lambda
 
 This AWS Lambda function automates the cleanup of old EBS snapshots. It identifies and deletes snapshots, keeping only the newest four per volume, and uploads a CSV report to an S3 bucket. Optionally, the function sends a Slack notification with the report link and total space marked for deletion.
