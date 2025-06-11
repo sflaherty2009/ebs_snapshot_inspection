@@ -109,6 +109,7 @@ def lambda_handler(event, context):
                 logger.error(f"Failed to send Slack message. Status code: {response.status}, Response: {response.data}")
     except Exception as e:
         logger.error(f"Error processing snapshots: {str(e)}")
+        raise
 
 def get_instance_name(ec2, volume_id):
     try:
