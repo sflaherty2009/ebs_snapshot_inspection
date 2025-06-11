@@ -61,7 +61,7 @@ SEND_SLACK_MESSAGE = True  # Boolean to enable/disable Slack notification
 
 # S3 bucket and key for storing CSV output
 S3_BUCKET = 'verato-snapshot-inspection'  # Replace with your S3 bucket name
-S3_KEY = 'old_snapshots.csv'  # Replace with your desired S3 key (file name)
+S3_KEY = 'old_snapshots.csv'  # Replace with your desired S3 key (filename)
 
 # Slack configuration
 SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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'  # Replace with your Slack webhook URL
