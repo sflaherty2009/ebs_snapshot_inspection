@@ -38,7 +38,7 @@ def lambda_handler(event, context):
         # Sort snapshots by StartTime (most recent first)
         snapshots.sort(key=lambda x: x['StartTime'], reverse=True)
 
-        # Output a list of all snapshots that are not the newest 4 for each volume
+        # Group snapshots by volume so we can identify and report older ones
         snapshots_by_volume = {}
         for snapshot in snapshots:
             volume_id = snapshot['VolumeId']

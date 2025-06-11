@@ -60,7 +60,7 @@ DELETE_SNAPSHOTS = False
 SEND_SLACK_MESSAGE = True  # Boolean to enable/disable Slack notification
 
 # S3 bucket and key for storing CSV output
-S3_BUCKET = 'verato-snapshot-inspection'  # Replace with your S3 bucket name
+S3_BUCKET = 'snapshot-inspection'  # Replace with your S3 bucket name
 S3_KEY = 'old_snapshots.csv'  # Replace with your desired S3 key (file name)
 
 # Slack configuration
