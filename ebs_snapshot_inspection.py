@@ -62,7 +62,9 @@ def lambda_handler(event, context):
                     state = snapshot['State']
                     description = snapshot.get('Description', 'N/A')
                     size = snapshot['VolumeSize']
-                    name = next((tag['Value'] for tag in snapshot.get('Tags', []) if tag['Key'] == 'Name'), 'N/A')
+                    name = next((tag['Value'] for tag in snapshot.get('Tags', []) if tag['Key'] == 'Name'), None)
+                    if not name:
+                        name = get_instance_name(ec2, volume_id)
 
                     csv_writer.writerow([snapshot_id, start_time, volume_id, state, description, size, name])
                     logger.info(f"Old snapshot: {snapshot_id}, Description: {description}, Size: {size} GiB, Name: {name}")
